@@ -11,9 +11,9 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
-    res.render("mainGame")
+    res.render("mainGame");
 });
 
 app.listen(port, () => {
     console.log("Express listenong @ http://localhost: " + port);
-})
+});
