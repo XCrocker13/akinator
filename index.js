@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
-    res.render("")
+    res.render("mainGame")
 });
 
 app.listen(port, () => {
