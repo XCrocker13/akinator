@@ -15,5 +15,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log("Express listening @ http://localhost: " + port);
+    console.log("express listining on http://localhost:" + port);
 });
