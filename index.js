@@ -17,6 +17,9 @@ app.get("/", (req, res) => {
 app.get("/mainGame",(req,res) =>{
     res.render("mainGame");
 });
+app.get("/safzsc", (req, res) => {
+    res.render("mainGame");
+});
 
 app.get("/how-to-play",(req,res) =>{
     res.render("how-to-play");
