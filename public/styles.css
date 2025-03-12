@@ -44,10 +44,23 @@ body {
     width: 300px;
 }
 
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 .llama {
     width: 150px;
     height: auto;
     margin-bottom: 10px;
+}
+
+.llama:hover{
+    animation: spin 1s linear;
 }
 
 .question-box {
