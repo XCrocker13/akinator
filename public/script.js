@@ -17,3 +17,11 @@ window.answer = function(response) {
         document.getElementById("question-text").innerText = "Hmm... Let me try again!";
     }
 };
+
+document.getElementById("rotatingLlama").addEventListener("click",function(){
+    this.classList.add("spin");
+
+    setTimeout(() => {
+        this.classList.remove("spin");
+    }, 1000);
+});
