@@ -79,6 +79,8 @@ body {
 }
 
 .answer-buttons button:hover {
+    outline: 3px solid yellow;
+    outline-offset: 2px;
     background-color: black;
     color: yellow;
     opacity: 0.8;
@@ -105,6 +107,8 @@ body {
 }
 
 .startScreenButton button:hover{
+    outline: 3px solid cyan;
+    outline-offset: 2px;
     background-color: black;
     color: cyan;
     opacity: 0.8;
