@@ -26,7 +26,7 @@ exports.DAL =
     },
     RetrieveClubStatus:async function(club)
     {
-        return club.new;
+        return club.isNew;
     },
     RetrieveClubLeadership:async function(club)
     {

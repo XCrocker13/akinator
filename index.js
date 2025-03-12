@@ -13,6 +13,9 @@ app.use(express.urlencoded());
 app.get("/", (req, res) => {
     res.render("mainGame");
 });
+app.get("/safzsc", (req, res) => {
+    res.render("mainGame");
+});
 
 app.listen(port, () => {
     console.log("express listining on http://localhost:" + port);
