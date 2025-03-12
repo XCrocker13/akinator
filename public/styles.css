@@ -119,3 +119,24 @@ body {
     height: auto;
     margin-bottom: 10px;
 }
+
+.info-Button button{
+    margin-top: 20px;
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: yellow;
+    color: black;
+}
+
+.info-Button button:hover {
+    outline: 3px solid yellow;
+    outline-offset: 2px;
+    background-color: black;
+    color: yellow;
+    opacity: 0.8;
+}
