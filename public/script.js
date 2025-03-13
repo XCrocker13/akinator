@@ -103,19 +103,45 @@ document.getElementById("rotatingLlama").addEventListener("click",function(){
 });
 
 window.onload = function(){
-    if(window.location.pathname === "/mainGame"){ 
+    if (window.location.pathname === "/mainGame") {
         let music = document.getElementById("idleMusic");
-        if(music){
-            document.body.addEventListener("click", function() {
-                music.muted = false;
-                music.play().then(() => {
-                    console.log("Audio is playing");
-                }).catch(error => {
-                    console.log("Autoplay prevented: " + error);
-                });
-            }, { once: false });
+        if (music) {
+            music.muted = false;
+            music.play().then(() => {
+                console.log("idleMusic is playing");
+            }).catch(error => {
+                console.log("Autoplay prevented: " + error);
+            });
         } else {
-            console.log("Audio element not found");
+            console.log("Audio element not found for idleMusic");
+        }
+    }
+
+    if (window.location.pathname === "/winScreen") {
+        let winMusic = document.getElementById("winMusic");
+        if (winMusic) {
+            winMusic.muted = false;
+            winMusic.play().then(() => {
+                console.log("winMusic is playing");
+            }).catch(error => {
+                console.log("Autoplay prevented: " + error);
+            });
+        } else {
+            console.log("Audio element not found for winMusic");
+        }
+    }
+
+    if (window.location.pathname === "/loseScreen") {
+        let winMusic = document.getElementById("loseMusic");
+        if (winMusic) {
+            winMusic.muted = false;
+            winMusic.play().then(() => {
+                console.log("loseMusic is playing");
+            }).catch(error => {
+                console.log("Autoplay prevented: " + error);
+            });
+        } else {
+            console.log("Audio element not found for loseMusic");
         }
     }
 };
