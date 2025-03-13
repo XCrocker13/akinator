@@ -37,7 +37,7 @@ window.onload = function(){
                 }).catch(error => {
                     console.log("Autoplay prevented: " + error);
                 });
-            }, { once: true });
+            }, { once: false });
         } else {
             console.log("Audio element not found");
         }
