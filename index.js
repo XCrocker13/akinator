@@ -22,6 +22,14 @@ app.get("/how-to-play",(req,res) =>{
     res.render("how-to-play");
 });
 
+app.get("/winScreen",(req,res) =>{
+    res.render("winScreen");
+});
+
+app.get("/loseScreen",(req,res) =>{
+    res.render("loseScreen");
+});
+
 app.listen(port, () => {
     console.log("express listining on http://localhost:" + port);
 });

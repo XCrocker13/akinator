@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>You Lost!</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="mysteryBody">
+    <div class="mystery-container">
+        <h1 class="mystery-text">🔮 Something went wrong...</h1>
+        <p>The Llama couldn't guess your club!</p>
+        <div id="replayButton">
+            <button>Try Again</button>
+        </div>
+    </div>
+
+    <audio id="loseMusic" autoplay>
+        <source src="" type="audio/mp3">
+    </audio>
+
+    <script>
+        document.getElementById("replayButton").addEventListener("click", function() {
+            window.location.href = "/mainGame";
+        });
+    </script>
+</body>
+</html>

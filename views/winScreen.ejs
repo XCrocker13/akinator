@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body class="winBody">
+        <div class="win-container">
+            <h1 class="glitch-text">🎉 You Win! 🎉</h1>
+            <p>Congratulations! The Llama guessed correctly!</p>
+            <button id="playAgain">Play Again</button>
+            <script>
+                document.getElementById("playAgain").addEventListener("click", function() {
+                    window.location.href = "/mainGame";
+                });
+            </script>
+        </div>
+    </body>
+    <audio id="winMusic" loop>
+        <source src="" type="audio/mp3">
+    </audio>
+    <script type="module" src="script.js"></script>
+</html>
