@@ -25,3 +25,21 @@ document.getElementById("rotatingLlama").addEventListener("click",function(){
         this.classList.remove("spin");
     }, 1000);
 });
+
+window.onload = function(){
+    if(window.location.pathname === "/mainGame"){ 
+        let music = document.getElementById("idleMusic");
+        if(music){
+            document.body.addEventListener("click", function() {
+                music.muted = false;
+                music.play().then(() => {
+                    console.log("Audio is playing");
+                }).catch(error => {
+                    console.log("Autoplay prevented: " + error);
+                });
+            }, { once: true });
+        } else {
+            console.log("Audio element not found");
+        }
+    }
+};
