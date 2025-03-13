@@ -48,8 +48,16 @@ const questionData =
     {question: "Has your club partnered with another club?", yesIdArray: [1, 3, 4, 5], noIdArray: [2, 6]},
     {question: "Is your club a new club?", yesIdArray: [6], noIdArray: [1, 2, 3, 4, 5]},
     {question: "Does your club have 20 members or less", yesIdArray: [3, 4, 6], noIdArray: [1, 2, 4, 5]},
-    {question: "Was your club made for relaxation?", yesIdArray: [1, 3, 6], noIdArray: [2, 4, 5]}
-
+    {question: "Was your club made for relaxation?", yesIdArray: [1, 3, 6], noIdArray: [2, 4, 5]},
+    {question: "Is your club focused on games?", yesIdArray: [2], noIdArray: [1, 3, 4, 5, 6]},
+    {question: "Is your club food-related?", yesIdArray: [4], noIdArray: [1, 2, 3, 5, 6]},
+    {question: "Is your club focused on horror or entertainment?", yesIdArray: [6], noIdArray: [1, 2, 3, 4, 5]},
+    {question: "Does your club cater to a specific hobby or interest?", yesIdArray: [2, 3, 4, 6], noIdArray: [1, 5]},
+    {question: "Is your club more focused on entertainment than education?", yesIdArray: [3, 4], noIdArray: [1, 2, 5, 6]},
+    {question: "Is your club a community-based group?", yesIdArray: [1], noIdArray: [2, 3, 4, 5, 6]},
+    {question: "Does your club require membership fees?", yesIdArray: [3], noIdArray: [1, 2, 4, 5, 6]},
+    {question: "Do your club events tend to last for over 6 hours?", yesIdArray: [2], noIdArray: [1, 3, 4, 5, 6]},
+    {question: "Does your club involve the color green", yesIdArray: [6], noIdArray: [1, 2, 3, 4, 5]}
 ];
 
 // const questionList = 
