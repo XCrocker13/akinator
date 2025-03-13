@@ -39,9 +39,11 @@ function handelQuestion(result) {
 
     if(isFinalGuess) { // checks if the guess is the final guess
         if(result === "yes") {
-            document.getElementById("question-text").innerText = "I win!"; // TODO: Switch to a win screen
+            document.getElementById("question-text").innerText = "I win!";
+            window.location.href = "/winScreen";
         } else {
-            document.getElementById("question-text").innerText = "I lose!"; // TODO: Switch to a lose screen
+            document.getElementById("question-text").innerText = "I lose!";
+            window.location.href = "/loseScreen";
         }
         return;
     }
