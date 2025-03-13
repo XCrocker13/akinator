@@ -3,9 +3,11 @@ import { DAL } from '/Data/clubDAL.js';
 const clubDAL = DAL;  // Using DAL as an object, not a class instance
 let clubsLeft = [];
 let isFinalGuess = false;
+let myQuestion = 0;
+
 
 clubDAL.RetrieveAllClubData().then(clubData => {
-    const clubs = clubData.map(club => clubDAL.RetrieveAllClubName(club)); // Retrieve club names
+    const clubs = clubData.map(club => clubDAL.RetrieveClubId(club)); // Retrieve club names
     Promise.all(clubs).then(clubNames => {
         clubsLeft = [...clubNames];  // Assign the names directly to clubsLeft
         console.log(clubsLeft);  // This prints the correct list of club names
@@ -26,7 +28,8 @@ window.answer = function(response) {
 function handelQuestion(result) {
     let question = document.getElementById("question-text").innerText;
     if(question === "Think of a club... I'll guess it! Ready?" && result === "yes") {  // checks if the user is ready to play
-        askQuestion("Is your club a social club?");
+        askQuestion("Is your club a new club?");
+        return;
      } else if(question === "Think of a club... I'll guess it! Ready?" && result === "no") { return; }
 
     if(isFinalGuess) { // checks if the guess is the final guess
@@ -39,7 +42,19 @@ function handelQuestion(result) {
     }
 
     clubsLeft.pop(); //TODO: Implement logic to remove clubs from the list based on the user's responses
+    checkClub();
     question = checkIfFinalGuess(question);
+}
+
+function checkClub(result)
+{
+    let question = document.getElementById("question-text").innerText;
+    clubDAL.RetrieveClubConnection(question).then(questionData => {
+        console.log(questionData);
+    });
+    clubsLeft.forEach(element => {
+        
+    });
 }
 
 function askQuestion(question) {
@@ -50,8 +65,10 @@ function askQuestion(question) {
 function checkIfFinalGuess(question) {
     if(clubsLeft.length === 1) {
         isFinalGuess = true;
-        console.log("Final guess:", clubsLeft[0]);
-        return document.getElementById("question-text").innerText = "Is your club the " + clubsLeft[0] + "?";
+        clubDAL.RetrieveClubNameById(clubsLeft[0]).then(clubName => {
+            console.log("Final guess:", clubName);
+            return document.getElementById("question-text").innerText = "Is your club the " + clubName + "?";
+        });        
     } else {
         return question;
     }
