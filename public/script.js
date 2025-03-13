@@ -3,7 +3,6 @@ import { DAL } from '/Data/clubDAL.js';
 const clubDAL = DAL;  // Using DAL as an object, not a class instance
 let clubsLeft = [];
 let isFinalGuess = false;
-let myQuestion = 0;
 
 
 clubDAL.RetrieveAllClubData().then(clubData => {
