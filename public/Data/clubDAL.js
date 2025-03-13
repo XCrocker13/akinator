@@ -18,6 +18,10 @@ export const DAL = {
     RetrieveClubConnection: async function(questionText)
     {
         return questionData.find(q => q.question === questionText);
+    },
+    RetrieveQuestionList: async function()
+    {
+        return questionData.map(item => item.question);
     }
 };
 
