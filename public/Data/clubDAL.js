@@ -1,25 +1,23 @@
 // Ensure the DAL class or object is exported properly
 export const DAL = {
-    RetrieveAllClubData: async function() {
+    RetrieveAllClubData: async function() 
+    {
         return clubData;
     },
-    RetrieveAllClubName: async function(club) {
-        return club.clubName;
+    RetrieveClubId: async function(club) 
+    {
+        return club.clubId;
     },
-    RetrieveAllClubSize: async function(club) {
-        return club.size;
+    RetrieveClubNameById: async function(id) 
+    {
+        console.log("dgffzmhdjfsfghdawdszcjywadfshrDA");
+        let index =  clubData.findIndex(g => g.clubId === id);
+        return clubData[index].clubName;
+        //return questionData.find(q => q.clubId === id);
     },
-    RetrieveClubCategory: async function(club) {
-        return club.category;
-    },
-    RetrieveClubEvents: async function(club) {
-        return club.events;
-    },
-    RetrieveClubStatus: async function(club) {
-        return club.isNew;
-    },
-    RetrieveClubLeadership: async function(club) {
-        return club.leadership;
+    RetrieveClubConnection: async function(questionText)
+    {
+        return questionData.find(q => q.question === questionText);
     }
 };
 
@@ -38,3 +36,30 @@ const clubData = [
     { clubId: 5, clubName: "Green Ball Club", size: 30, category: "Social", events: "Social Gatherings", isNew: false, leadership: ["Cameron Troy", "Lily McClellan", "Clover Angel", "Jaime Rodriguez"] },
     { clubId: 6, clubName: "Horror Club", size: 20, category: "Media", events: "Movie Screenings", isNew: true, leadership: ["Ben Leonard", "Austin Lawrence", "Cambry Partridge", "Ry Ellender"] }
 ];
+
+const questionData =
+[
+    {question: "Is your club a social club?", yesIdArray: [1, 2, 3, 5], noIdArray: [4, 6]},
+    {question: "Does your club host events on a regular basis?", yesIdArray: [2, 3, 5], noIdArray: [1, 4, 6]},
+    {question: "Has your club partnered with another club?", yesIdArray: [1, 3, 4, 5], noIdArray: [2, 6]},
+    {question: "Is your club a new club?", yesIdArray: [6], noIdArray: [1, 2, 3, 4, 5]},
+    {question: "Does your club have 20 members or less", yesIdArray: [3, 4, 6], noIdArray: [1, 2, 4, 5]},
+    {question: "Was your club made for relaxation?", yesIdArray: [1, 3, 6], noIdArray: [2, 4, 5]}
+
+];
+
+// const questionList = 
+// [
+//         "Who is the president of your club?",
+//         "Is your club a social club?",
+//         "Is your club a new club?",
+//         "What is the main focus of your club?",
+//         "Who is a leader within your club?",
+//         "Was your club made for relaxation?",
+//         "Does your club encourage collaboration?",
+//         "Does your club host events on a regular basis?",
+//         "Has your club partnered with another club?",
+//         "Does your club have aproximately 20 members",
+//         "Does your club have over 20 members"
+    
+// ]
