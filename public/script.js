@@ -23,8 +23,6 @@ window.answer = function(response) {
     }
 };
 
-
-
 function handelQuestion(result) {
     let question = document.getElementById("question-text").innerText;
     if(question === "Think of a club... I'll guess it! Ready?" && result === "yes") {  // checks if the user is ready to play
@@ -58,3 +56,29 @@ function checkIfFinalGuess(question) {
         return question;
     }
 }
+
+document.getElementById("rotatingLlama").addEventListener("click",function(){
+    this.classList.add("spin");
+
+    setTimeout(() => {
+        this.classList.remove("spin");
+    }, 1000);
+});
+
+window.onload = function(){
+    if(window.location.pathname === "/mainGame"){ 
+        let music = document.getElementById("idleMusic");
+        if(music){
+            document.body.addEventListener("click", function() {
+                music.muted = false;
+                music.play().then(() => {
+                    console.log("Audio is playing");
+                }).catch(error => {
+                    console.log("Autoplay prevented: " + error);
+                });
+            }, { once: false });
+        } else {
+            console.log("Audio element not found");
+        }
+    }
+};

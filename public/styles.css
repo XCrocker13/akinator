@@ -53,15 +53,17 @@ body {
     }
 }
 
+.spin{
+    animation: spin 1s linear;
+}
+
+
 .llama {
     width: 150px;
     height: auto;
     margin-bottom: 10px;
 }
 
-.llama:hover{
-    animation: spin 1s linear;
-}
 
 .question-box {
     background:yellow;
