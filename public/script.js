@@ -40,8 +40,8 @@ function handelQuestion(result) {
         return;
     }
 
-    clubsLeft.pop(); //TODO: Implement logic to remove clubs from the list based on the user's responses
-    checkClub();
+    //clubsLeft.pop(); //TODO: Implement logic to remove clubs from the list based on the user's responses
+    checkClub(result);
     question = checkIfFinalGuess(question);
 }
 
@@ -50,9 +50,21 @@ function checkClub(result)
     let question = document.getElementById("question-text").innerText;
     clubDAL.RetrieveClubConnection(question).then(questionData => {
         console.log(questionData);
-    });
-    clubsLeft.forEach(element => {
-        
+        if(result === "yes") {
+            questionData.noIdArray.forEach(id => {
+                console.log(clubsLeft);
+                clubsLeft = clubsLeft.filter(element => element !== id);
+            });
+        } else {
+            questionData.yesIdArray.forEach(id => {
+                console.log(clubsLeft);
+                clubsLeft = clubsLeft.filter(element => element !== id);
+            });
+        }
+        // questionData.yesIdArray.forEach(id => {
+        //     console.log(clubsLeft);
+        //     clubsLeft = clubsLeft.filter(element => element !== id);
+        // });
     });
 }
 
